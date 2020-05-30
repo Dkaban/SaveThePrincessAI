@@ -6,17 +6,18 @@ class Solution {
 static void displayPathtoPrincess(int n, String [] grid){
     int botRow = 0, botCol = 0, princessRow = 0, princessCol = 0;
 
-        // Get bot and princess coordinates
+        // Get the coordinates for the bot and the princess
+        //r is row, c is column
         for (int r = 0; r < n; r++)
         {
             for (int c = 0; c < grid.Length; c++)
             {
-                if (grid[r][c] == 'm' || grid[r][c] == 'M')
+                if (grid[r][c] == 'm')
                 {
                     botRow = r;
                     botCol = c;
                 }
-                else if (grid[r][c] == 'p' || grid[r][c] == 'P')
+                else if (grid[r][c] == 'p')
                 {
                     princessRow = r;
                     princessCol = c;
@@ -24,7 +25,7 @@ static void displayPathtoPrincess(int n, String [] grid){
             }
         }
 
-        // Move the bot up or down till bot reaches same row
+        // Move the bot up or down until it reaches the same row as the princess
         if( princessRow < botRow )
         {
             while(botRow != princessRow)
@@ -42,7 +43,7 @@ static void displayPathtoPrincess(int n, String [] grid){
             }
         }
 
-        // Move the bot left or right till bot reaches same column
+        // Move the bot left or right until it reaches the same column as the princess
         if( princessCol < botCol )
         {
             while(botCol != princessCol)
